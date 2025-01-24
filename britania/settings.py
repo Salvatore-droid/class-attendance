@@ -122,7 +122,7 @@ USE_TZ = True
 STATIC_URL = '/static/'  # This is the URL for serving static files
 
 # Directory to collect all static files into (used when running collectstatic)
-STATIC_ROOT = os.path.join(BASE_DIR, 'base/static')  # Adjust as necessary
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Adjust as necessary
 
 # Directories where Django should look for static files (excluding the STATIC_ROOT)
 STATICFILES_DIRS = [
