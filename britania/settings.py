@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,9 +24,7 @@ SECRET_KEY = 'django-insecure-+*vb(#xc=#8sqr#0=7h#8e8(+s0$a44gqu%q966c8*mrjlbpkj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'class-attendance-ggza.onrender.com'
-]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -122,12 +119,9 @@ USE_TZ = True
 STATIC_URL = '/static/'  # This is the URL for serving static files
 
 # Directory to collect all static files into (used when running collectstatic)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Adjust as necessary
+STATIC_ROOT = BASE_DIR / 'static' # Adjust as necessary
 
-# Directories where Django should look for static files (excluding the STATIC_ROOT)
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Custom static files directory
-]
+
 
 
 
