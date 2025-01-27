@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+*vb(#xc=#8sqr#0=7h#8e8(+s0$a44gqu%q966c8*mrjlbpkj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -116,10 +118,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 # settings.py
 
-STATIC_URL = '/static/'  # This is the URL for serving static files
+STATIC_URL = 'static/'  # This is the URL for serving static files
 
 # Directory to collect all static files into (used when running collectstatic)
-STATIC_ROOT = BASE_DIR / 'static' # Adjust as necessary
+if DEBUG:   # if DEBUG is set to True
+    STATICFILES_DIRS = [BASE_DIR, 'static']
+
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static') # Adjust as necessary
 
 
 
