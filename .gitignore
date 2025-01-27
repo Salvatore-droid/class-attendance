@@ -1,0 +1,10 @@
+# ignore this files
+
+# 1. virtual environment
+*venv
+
+# environment variable file
+*.env
+
+# binary files - compiled files
+*__pycache__
